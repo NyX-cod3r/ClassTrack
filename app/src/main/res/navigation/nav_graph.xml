@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.attendanceschedulemanager.ui.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.example.attendanceschedulemanager.ui.TimetableFragment"
+        android:label="Timetable"
+        tools:layout="@layout/fragment_timetable" />
+
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="com.example.attendanceschedulemanager.ui.AttendanceFragment"
+        android:label="Attendance"
+        tools:layout="@layout/fragment_attendance" />
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.attendanceschedulemanager.ui.CalendarFragment"
+        android:label="Calendar"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/materialsFragment"
+        android:name="com.example.attendanceschedulemanager.ui.MaterialsFragment"
+        android:label="Materials"
+        tools:layout="@layout/fragment_materials" />
+
+</navigation>
