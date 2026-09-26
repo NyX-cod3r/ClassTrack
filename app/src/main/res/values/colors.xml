@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Core Brand Palette from Academic Attendance & Timetable M3 DESIGN.md -->
+    <color name="primary">#24389c</color>
+    <color name="onPrimary">#ffffff</color>
+    <color name="primaryContainer">#3f51b5</color>
+    <color name="onPrimaryContainer">#cacfff</color>
 
-    <!-- Material 3 Basic Palette -->
-    <color name="md_theme_light_primary">#6750A4</color>
-    <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#EADDFF</color>
-    <color name="md_theme_light_onPrimaryContainer">#21005D</color>
-    <color name="md_theme_light_secondary">#625B71</color>
-    <color name="md_theme_light_onSecondary">#FFFFFF</color>
-    <color name="md_theme_light_secondaryContainer">#E8DEF8</color>
-    <color name="md_theme_light_onSecondaryContainer">#1D192B</color>
-    <color name="md_theme_light_surface">#FEF7FF</color>
-    <color name="md_theme_light_onSurface">#1D1B20</color>
-    <color name="md_theme_light_surfaceVariant">#E7E0EB</color>
-    <color name="md_theme_light_onSurfaceVariant">#49454F</color>
+    <color name="secondary">#5b5d72</color>
+    <color name="onSecondary">#ffffff</color>
+    <color name="secondaryContainer">#dddef7</color>
+    <color name="onSecondaryContainer">#5f6176</color>
+
+    <color name="tertiary">#004a53</color>
+    <color name="onTertiary">#ffffff</color>
+    <color name="tertiaryContainer">#006470</color>
+    <color name="onTertiaryContainer">#91deec</color>
+
+    <color name="background">#fbf8fe</color>
+    <color name="onBackground">#1b1b1f</color>
+    <color name="surface">#fbf8fe</color>
+    <color name="onSurface">#1b1b1f</color>
+    <color name="surfaceVariant">#e4e1e7</color>
+    <color name="onSurfaceVariant">#454652</color>
+
+    <color name="outline">#757684</color>
+    <color name="outline_variant">#c5c5d4</color>
+
+    <!-- Attendance Semantic Palette -->
+    <color name="attendance_present_fill">#C8E6C9</color>
+    <color name="attendance_present_text">#0A3812</color>
+    <color name="attendance_absent_fill">#FFDAD6</color>
+    <color name="attendance_absent_text">#410002</color>
+    <color name="attendance_borderline_fill">#FFE082</color>
+    <color name="attendance_borderline_text">#2A1200</color>
 </resources>

@@ -5,26 +5,27 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.attendanceschedulemanager.data.dao.AttendanceDao
-import com.example.attendanceschedulemanager.data.dao.MaterialDao
-import com.example.attendanceschedulemanager.data.dao.ScheduleDao
-import com.example.attendanceschedulemanager.data.dao.SubjectDao
-import com.example.attendanceschedulemanager.data.entity.Attendance
-import com.example.attendanceschedulemanager.data.entity.Schedule
-import com.example.attendanceschedulemanager.data.entity.StudyMaterial
-import com.example.attendanceschedulemanager.data.entity.Subject
+import com.example.attendanceschedulemanager.data.dao.*
+import com.example.attendanceschedulemanager.data.entity.*
 
 @Database(
-    entities = [Subject::class, Schedule::class, Attendance::class, StudyMaterial::class],
-    version = 1,
+    entities = [
+        Subject::class,
+        TimetableSlot::class,
+        AttendanceRecord::class,
+        StudyMaterial::class,
+        Semester::class,
+        ReminderSetting::class
+    ],
+    version = 5,
     exportSchema = true
 )
 @TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun subjectDao(): SubjectDao
-    abstract fun scheduleDao(): ScheduleDao
-    abstract fun attendanceDao(): AttendanceDao
-    abstract fun materialDao(): MaterialDao
+    abstract fun timetableSlotDao(): TimetableSlotDao
+    abstract fun attendanceRecordDao(): AttendanceRecordDao
+    abstract fun studyMaterialDao(): StudyMaterialDao
 
     companion object {
         @Volatile
@@ -35,8 +36,10 @@ abstract class AppDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     AppDatabase::class.java,
-                    "attendance_schedule_db"
-                ).build()
+                    "classtrack_database"
+                )
+                .fallbackToDestructiveMigration()
+                .build()
                 INSTANCE = instance
                 instance
             }

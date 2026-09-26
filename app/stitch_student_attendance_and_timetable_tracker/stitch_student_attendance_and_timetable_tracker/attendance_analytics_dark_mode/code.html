@@ -1,0 +1,481 @@
+<!DOCTYPE html><html class="h-full dark" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior-y: none;
+      }
+      .pb-safe {
+        padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 5.5rem);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-container": "#00554b",
+            "surface-tint": "#bac3ff",
+            "surface-container-highest": "#343538",
+            "secondary": "#44efd8",
+            "on-primary-fixed-variant": "#3a4376",
+            "tertiary-fixed-dim": "#ffb954",
+            "on-tertiary": "#452b00",
+            "on-surface-variant": "#c6c5d0",
+            "tertiary-container": "#ffb954",
+            "on-secondary": "#003731",
+            "outline-variant": "#46464f",
+            "inverse-primary": "#525b90",
+            "secondary-container": "#00d2bc",
+            "primary-fixed-dim": "#bac3ff",
+            "surface-bright": "#38393c",
+            "on-tertiary-fixed": "#291800",
+            "inverse-surface": "#e3e2e6",
+            "tertiary": "#ffddb4",
+            "surface-container-low": "#1b1b1f",
+            "error": "#ffb4ab",
+            "inverse-on-surface": "#2f3034",
+            "secondary-fixed-dim": "#25dec7",
+            "tertiary-fixed": "#ffddb4",
+            "on-primary-fixed": "#0c1649",
+            "on-primary-container": "#464f83",
+            "error-container": "#93000a",
+            "surface": "#121316",
+            "on-secondary-fixed-variant": "#005047",
+            "surface-container-high": "#292a2d",
+            "on-tertiary-container": "#734a00",
+            "on-background": "#e3e2e6",
+            "primary": "#dee0ff",
+            "primary-fixed": "#dee0ff",
+            "outline": "#90909a",
+            "surface-dim": "#121316",
+            "primary-container": "#bac3ff",
+            "surface-container-lowest": "#0d0e11",
+            "surface-variant": "#343538",
+            "on-error-container": "#ffdad6",
+            "background": "#121316",
+            "secondary-fixed": "#55fbe3",
+            "on-error": "#690005",
+            "on-tertiary-fixed-variant": "#633f00",
+            "on-primary": "#232c5e",
+            "surface-container": "#1f1f23",
+            "on-secondary-fixed": "#00201c",
+            "on-surface": "#e3e2e6"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col font-sans antialiased">
+<!-- Top App Bar -->
+<header class="fixed top-0 inset-x-0 z-50 bg-[#121316]/85 backdrop-blur-xl border-b border-outline-variant/20 pt-safe">
+<div class="h-16 px-4 flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0 flex-1">
+<img src="https://lh3.googleusercontent.com/aida/AEtjO1Xqa45Ca5uywiuPjIzE9_BGCj07J6ffjvvSdfcA2VsBhsIeGO2snEK8hkMLL-2qGI-a03cV99LFdp22fYwplPUeqlFRSNQuoF2XxoOtIrRD3IEZrckD0DWFxeWO08_QlfVD0KAH-ZkU6k6nksxqDodQZjGICAJytRdZ7FpY-esYGj2bECowi1PDJxoNrfs3otn66n5DSXhog11CtpUB_PWyo7PklSRB-bC7DKiizlDYC0Hgc2zh84TjztLz" alt="ClassTrack Logo" class="w-8 h-8 rounded-xl object-cover shrink-0">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-base font-bold text-on-surface tracking-tight truncate">ClassTrack</span>
+<span class="text-xs text-on-surface-variant font-normal">·</span>
+<span class="text-sm font-medium text-surface-tint truncate">Analytics</span>
+</div>
+
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="w-10 h-10 relative rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#ff7360] ring-2 ring-surface shadow-[0_0_8px_#ff7360]"></span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity ring-1 ring-outline-variant/40">
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFxuhLh1jiQS9yp8dQNq79HNDuH2DaoVqd5WvAyuEXKOgbhFdKIaPZMbsZPEN8yTh-dWxNoOOnXdW7aDoVZFkE6vrsS-mey0dRBSg3otHGvPgI4MzIUUKejXnOD9clzn609qchidc1MNuMZONOa0OI0n4nu14As2Wf6lzZEKlmGa4MGBfjdFprxf3nZvLwZn5vNjEdZ3BWJosp9Ecscc3wuSzlEvP_6xTUvd6Q2u7nOthaW0rTVkpSzg">
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-background">
+<div class="flex flex-col w-full px-4 pb-6">
+<!-- Subject Switcher Bar (Codes Removed) -->
+<div class="flex items-center justify-between gap-3 pt-3 pb-3">
+<button class="group flex items-center gap-2 bg-[#1f1f23] hover:bg-[#292a2d] border border-outline-variant/30 px-4 py-2 rounded-full text-left transition-all active:scale-[0.98] shadow-sm" id="subject-selector-btn">
+<div class="w-2.5 h-2.5 rounded-full bg-[#ff7360] shadow-[0_0_8px_#ff7360]"></div>
+<div class="flex items-center gap-1">
+<span class="text-sm font-semibold text-on-surface truncate max-w-[210px]">Database Management</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:translate-y-0.5 transition-transform">arrow_drop_down</span>
+</div>
+</button>
+<button class="flex items-center gap-1.5 bg-[#004f45] text-secondary hover:bg-[#006054] px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span class="">Switch</span>
+</button>
+</div>
+<!-- Hero Analytics Metric Card -->
+<div class="bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-4.5 shadow-md relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-36 h-36 bg-[#ff7360]/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between gap-4">
+<!-- M3 Circular Gauge Container -->
+<div class="relative w-28 h-28 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+<!-- Background track -->
+<circle class="text-[#2a2b30]" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-width="8.5"></circle>
+<!-- Threshold reference marker (75%) -->
+<circle class="text-surface-tint/30" cx="50" cy="50" fill="none" r="40" stroke="currentColor" stroke-dasharray="1.5 249.8" stroke-dashoffset="-188.4" stroke-width="8.5"></circle>
+<!-- Active Warning Progress -->
+<circle class="text-[#ff7360] filter drop-shadow-[0_0_6px_rgba(255,115,96,0.5)] transition-all duration-700 ease-out" cx="50" cy="50" fill="none" id="progress-circle" r="40" stroke="currentColor" stroke-dasharray="251.3" stroke-dashoffset="68.6" stroke-linecap="round" stroke-width="8.5"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="text-2xl font-bold text-[#ff998a] tracking-tight leading-none">72.7%</span>
+<span class="font-mono text-[10px] text-on-surface-variant mt-1 uppercase tracking-wider font-semibold">Goal 75%</span>
+</div>
+</div>
+<!-- Critical Status & Stat Grid -->
+<div class="flex-1 min-w-0 flex flex-col justify-center">
+<div class="inline-flex items-center gap-1.5 self-start bg-[#440c10] border border-[#ff7360]/40 text-[#ffb4ab] px-2.5 py-1 rounded-full mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-[#ff7360]" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="text-xs font-semibold tracking-wide">Critical Shortage</span>
+</div>
+<p class="text-xs text-[#ffb4ab]/90 font-medium leading-tight mb-2.5">
+              2.3% below minimum mandatory eligibility requirement.
+            </p>
+<!-- Micro Numbers -->
+<div class="grid grid-cols-3 gap-1 pt-1.5 text-center bg-[#121316]/70 border border-outline-variant/20 rounded-xl py-1.5 px-2">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">16</span>
+<span class="text-[11px] text-on-surface-variant">Attended</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-on-surface">22</span>
+<span class="text-[11px] text-on-surface-variant">Conducted</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-[#ff7360]">6</span>
+<span class="text-[11px] text-[#ffb4ab]">Missed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Attendance Bunk & Recovery Calculator -->
+<div class="mt-4 bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-4 shadow-md">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-container/20 border border-primary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[17px]">calculate</span>
+</div>
+<h2 class="text-sm font-semibold text-on-surface">Attendance Safe-Zone Planner</h2>
+</div>
+<span class="font-mono text-[11px] bg-[#292a2d] border border-outline-variant/30 text-on-surface-variant px-2.5 py-0.5 rounded-full font-medium">Smart Projection</span>
+</div>
+<!-- Projection Interactive Slider -->
+<div class="bg-[#121316] border border-outline-variant/20 p-3 rounded-xl">
+<div class="flex items-center justify-between text-on-surface text-xs mb-2">
+<span class="text-on-surface-variant">Simulate next classes:</span>
+<span class="font-bold text-surface-tint font-mono" id="slider-val-label">+2 Classes</span>
+</div>
+<input class="w-full h-1.5 bg-[#292a2d] rounded-lg appearance-none cursor-pointer accent-[#bac3ff]" id="classes-simulator" max="15" min="0" type="range" value="2">
+<div class="flex justify-between font-mono text-[10px] text-on-surface-variant mt-1.5 px-0.5">
+<span class="">Current</span>
+<span class="">+5</span>
+<span class="">+10</span>
+<span class="">+15 classes</span>
+</div>
+</div>
+<!-- Recovery Dynamic Insights Cards -->
+<div class="grid grid-cols-1 gap-2 mt-3">
+<div class="flex items-start gap-2 bg-[#202126] border border-outline-variant/20 p-2.5 rounded-xl">
+<span class="material-symbols-outlined text-[18px] text-surface-tint shrink-0 mt-0.5">verified</span>
+<p class="text-xs text-on-surface leading-relaxed" id="stat-target-75">
+              To reach <strong class="text-surface-tint font-semibold">75%</strong>: Attend next <span class="bg-[#2a3258] text-primary px-1.5 py-0.5 rounded font-mono font-semibold">2</span> consecutive classes without missing.
+            </p>
+</div>
+<div class="flex items-start gap-2 bg-[#202126] border border-outline-variant/20 p-2.5 rounded-xl">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim shrink-0 mt-0.5">trending_up</span>
+<p class="text-xs text-on-surface leading-relaxed" id="stat-target-80">
+              To reach <strong class="text-tertiary-fixed-dim font-semibold">80%</strong>: Attend next <span class="bg-[#473000] text-tertiary px-1.5 py-0.5 rounded font-mono font-semibold">8</span> consecutive classes.
+            </p>
+</div>
+<div class="flex items-center gap-2 bg-[#440c10]/70 border border-[#ff7360]/30 text-on-surface p-2.5 rounded-xl">
+<span class="material-symbols-outlined text-[18px] text-[#ff7360] shrink-0">block</span>
+<p class="text-xs font-medium text-[#ffdad6]">
+              Bunk allowance: <span class="font-bold text-[#ff7360]">0 classes</span>. Any further absence requires formal approval.
+            </p>
+</div>
+</div>
+</div>
+<!-- Date-wise Attendance History Log Header -->
+<div class="mt-6 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="text-base font-semibold text-on-surface">Activity Records</h3>
+<span class="bg-[#292a2d] text-on-surface-variant font-mono text-[11px] font-medium px-2.5 py-0.5 rounded-full border border-outline-variant/30">22 Logs</span>
+</div>
+<button class="text-surface-tint text-xs font-semibold flex items-center gap-1 hover:underline">
+<span class="">Timeline</span>
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+</button>
+</div>
+<!-- Filter Chips Bar -->
+<div class="flex items-center gap-2 overflow-x-auto py-2.5 -mx-4 px-4 scrollbar-none">
+<button class="filter-chip active flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-secondary-container/25 text-secondary border border-secondary/40 font-mono text-xs font-semibold shrink-0 transition-all" data-filter="all">
+<span class="material-symbols-outlined text-[15px]">check</span>
+<span class="">All (22)</span>
+</button>
+<button class="filter-chip flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-[#1b1b1f] text-on-surface-variant border border-outline-variant/30 font-mono text-xs shrink-0 hover:bg-[#292a2d] transition-all" data-filter="present">
+<span class="">Present (16)</span>
+</button>
+<button class="filter-chip flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-[#1b1b1f] text-on-surface-variant border border-outline-variant/30 font-mono text-xs shrink-0 hover:bg-[#292a2d] transition-all" data-filter="absent">
+<span class="">Absent (6)</span>
+</button>
+<button class="filter-chip flex items-center gap-1 px-3.5 py-1.5 rounded-full bg-[#1b1b1f] text-on-surface-variant border border-outline-variant/30 font-mono text-xs shrink-0 hover:bg-[#292a2d] transition-all" data-filter="cancelled">
+<span class="">Cancelled (2)</span>
+</button>
+</div>
+<!-- Chronological Class Records Stream -->
+<div class="flex flex-col gap-2.5 mt-1" id="attendance-log-list">
+<!-- Record 1: Absent with Reason -->
+<div class="log-card bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-3 flex flex-col gap-2.5 shadow-sm transition-all" data-status="absent">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#440c10] text-[#ff7360] flex items-center justify-center shrink-0 border border-[#ff7360]/30 shadow-[0_0_6px_rgba(255,115,96,0.3)]">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm text-on-surface font-semibold truncate">Regular Lecture</span>
+<span class="font-mono text-[11px] text-on-surface-variant">Wed, Oct 24 · 11:00 AM – 12:00 PM</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-mono text-[11px] font-semibold bg-[#440c10] border border-[#ff7360]/40 text-[#ffb4ab] shrink-0">
+              Absent
+            </span>
+</div>
+<div class="flex items-center justify-between bg-[#121316] px-3 py-2 rounded-xl border border-outline-variant/20">
+<div class="flex items-center gap-1.5 min-w-0 text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-outline shrink-0">medical_services</span>
+<span class="text-xs truncate">Medical leave / Self recorded</span>
+</div>
+<button class="w-7 h-7 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-colors shrink-0" title="Edit Reason">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Record 2: Present -->
+<div class="log-card bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-3 flex items-center justify-between gap-2 shadow-sm transition-all" data-status="present">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#003d35] text-secondary flex items-center justify-center shrink-0 border border-secondary/30">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-sm text-on-surface font-semibold truncate">Query Optimization</span>
+<span class="font-mono text-[10px] text-on-surface-variant bg-[#292a2d] border border-outline-variant/30 px-1.5 py-0.5 rounded shrink-0">Room 402</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">Mon, Oct 22 · 11:00 AM</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-mono text-[11px] font-semibold bg-[#004f45]/50 border border-secondary/40 text-secondary shrink-0">
+            Present
+          </span>
+</div>
+<!-- Record 3: Lab Present -->
+<div class="log-card bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-3 flex items-center justify-between gap-2 shadow-sm transition-all" data-status="present">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#003d35] text-secondary flex items-center justify-center shrink-0 border border-secondary/30">
+<span class="material-symbols-outlined text-[20px]">science</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-sm text-on-surface font-semibold truncate">SQL Indexing Lab</span>
+<span class="font-mono text-[10px] text-on-surface-variant bg-[#292a2d] border border-outline-variant/30 px-1.5 py-0.5 rounded shrink-0">Lab 3B</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">Fri, Oct 19 · 02:00 PM</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-mono text-[11px] font-semibold bg-[#004f45]/50 border border-secondary/40 text-secondary shrink-0">
+            Present
+          </span>
+</div>
+<!-- Record 4: Normalization Absent -->
+<div class="log-card bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-3 flex items-center justify-between gap-2 shadow-sm transition-all" data-status="absent">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#440c10] text-[#ff7360] flex items-center justify-center shrink-0 border border-[#ff7360]/30">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="text-sm text-on-surface font-semibold truncate">Normalization</span>
+<span class="font-mono text-[10px] text-on-surface-variant/80">Self-marked</span>
+</div>
+<span class="font-mono text-[11px] text-on-surface-variant">Wed, Oct 17 · 11:00 AM</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-mono text-[11px] font-semibold bg-[#440c10] border border-[#ff7360]/40 text-[#ffb4ab] shrink-0">
+            Absent
+          </span>
+</div>
+<!-- Record 5: Relational Algebra Present -->
+<div class="log-card bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-3 flex items-center justify-between gap-2 shadow-sm transition-all" data-status="present">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#003d35] text-secondary flex items-center justify-center shrink-0 border border-secondary/30">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm text-on-surface font-semibold truncate">Relational Algebra</span>
+<span class="font-mono text-[11px] text-on-surface-variant">Mon, Oct 15 · 11:00 AM</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-mono text-[11px] font-semibold bg-[#004f45]/50 border border-secondary/40 text-secondary shrink-0">
+            Present
+          </span>
+</div>
+<!-- Record 6: Cancelled Class -->
+<div class="log-card bg-[#1b1b1f] border border-outline-variant/25 rounded-2xl p-3 flex items-center justify-between gap-2 shadow-sm opacity-90 transition-all" data-status="cancelled">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-9 h-9 rounded-full bg-[#292a2d] text-on-surface-variant flex items-center justify-center shrink-0 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">event_busy</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="text-sm text-on-surface font-medium truncate">Class Cancelled by Faculty</span>
+<span class="font-mono text-[11px] text-on-surface-variant">Fri, Oct 12 · 02:00 PM · Dept Seminar</span>
+</div>
+</div>
+<span class="inline-flex items-center px-2.5 py-1 rounded-full font-mono text-[11px] font-medium bg-[#292a2d] border border-outline-variant/30 text-on-surface-variant shrink-0">
+            Excused
+          </span>
+</div>
+</div>
+<!-- Bottom Export Attendance Action -->
+<div class="mt-6">
+<button class="w-full h-12 rounded-full flex items-center justify-center gap-2 bg-[#1f1f23] hover:bg-[#292a2d] border border-outline-variant/35 text-surface-tint active:scale-[0.99] text-sm font-semibold tracking-wide shadow-sm transition-all" id="export-report-btn">
+<span class="material-symbols-outlined text-[20px]">download</span>
+<span class="">Export Attendance Report (CSV/PDF)</span>
+</button>
+</div>
+</div>
+<script>
+      (function() {
+        const slider = document.getElementById('classes-simulator');
+        const label = document.getElementById('slider-val-label');
+        const target75 = document.getElementById('stat-target-75');
+
+        if (slider && label && target75) {
+          slider.addEventListener('input', (e) => {
+            const added = parseInt(e.target.value, 10);
+            label.textContent = `+${added} Classes`;
+            const simulatedAttended = 16 + added;
+            const simulatedConducted = 22 + added;
+            const percentage = ((simulatedAttended / simulatedConducted) * 100).toFixed(1);
+
+            if (percentage >= 75) {
+              target75.innerHTML = `Projected percentage: <strong class="text-secondary font-semibold">${percentage}%</strong> — You've crossed the 75% threshold!`;
+            } else {
+              target75.innerHTML = `Projected percentage: <strong class="text-[#ff7360] font-semibold">${percentage}%</strong> (Requires at least 2 sessions to reach 75%).`;
+            }
+          });
+        }
+
+        // Filter Chips Interactive Logic
+        const chips = document.querySelectorAll('.filter-chip');
+        const cards = document.querySelectorAll('.log-card');
+
+        chips.forEach(chip => {
+          chip.addEventListener('click', () => {
+            chips.forEach(c => {
+              c.classList.remove('bg-secondary-container/25', 'text-secondary', 'border-secondary/40', 'font-semibold');
+              c.classList.add('bg-[#1b1b1f]', 'text-on-surface-variant', 'border-outline-variant/30');
+            });
+            chip.classList.add('bg-secondary-container/25', 'text-secondary', 'border-secondary/40', 'font-semibold');
+            chip.classList.remove('bg-[#1b1b1f]', 'text-on-surface-variant', 'border-outline-variant/30');
+
+            const filter = chip.getAttribute('data-filter');
+            cards.forEach(card => {
+              if (filter === 'all' || card.getAttribute('data-status') === filter) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          });
+        });
+
+        // Export Button Feedback Micro-interaction
+        const exportBtn = document.getElementById('export-report-btn');
+        if (exportBtn) {
+          exportBtn.addEventListener('click', () => {
+            const originalContent = exportBtn.innerHTML;
+            exportBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] animate-spin">sync</span><span>Preparing Report (PDF)...</span>';
+            setTimeout(() => {
+              exportBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] text-secondary">check_circle</span><span>Report Downloaded</span>';
+              setTimeout(() => {
+                exportBtn.innerHTML = originalContent;
+              }, 2000);
+            }, 800);
+          });
+        }
+      })();
+    </script>
+</main>
+<!-- Navigation Chrome -->
+<nav class="fixed bottom-0 inset-x-0 z-50 bg-[#121316]/95 backdrop-blur-xl border-t border-outline-variant/20 shadow-[0_-4px_16px_rgba(0,0,0,0.5)]">
+<div class="h-20 px-2 flex items-center justify-around max-w-md mx-auto">
+<a class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group" data-path="today" href="#">
+<div class="nav-pill w-12 h-8 rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-[#292a2d]">
+<span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant transition-colors">event_available</span>
+</div>
+<span class="nav-label text-[11px] font-medium text-on-surface-variant transition-colors">Today</span>
+</a>
+<a class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group" data-path="timetable" href="#">
+<div class="nav-pill w-12 h-8 rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-[#292a2d]">
+<span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant transition-colors">calendar_view_week</span>
+</div>
+<span class="nav-label text-[11px] font-medium text-on-surface-variant transition-colors">Timetable</span>
+</a>
+<a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group" data-path="analytics" href="#">
+<div class="nav-pill w-16 h-8 rounded-full flex items-center justify-center bg-primary-container text-on-primary-fixed shadow-sm">
+<span class="material-symbols-outlined nav-icon text-[22px] text-[#0c1649] transition-colors" style="font-variation-settings: 'FILL' 1;">pie_chart</span>
+</div>
+<span class="nav-label text-[11px] font-bold text-on-surface transition-colors">Analytics</span>
+</a>
+<a class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group" data-path="materials" href="#">
+<div class="nav-pill w-12 h-8 rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-[#292a2d]">
+<span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant transition-colors">auto_stories</span>
+</div>
+<span class="nav-label text-[11px] font-medium text-on-surface-variant transition-colors">Materials</span>
+</a>
+</div>
+</nav>
+
+
+</body></html>

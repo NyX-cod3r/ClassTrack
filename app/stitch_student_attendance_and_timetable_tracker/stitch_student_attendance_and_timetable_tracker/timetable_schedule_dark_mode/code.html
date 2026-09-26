@@ -1,0 +1,484 @@
+<!DOCTYPE html><html class="h-full dark" lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 5.5rem);}.pt-safe{padding-top:env(safe-area-inset-top, 0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-secondary-container": "#00554b",
+        "surface-tint": "#bac3ff",
+        "surface-container-highest": "#343538",
+        "secondary": "#44efd8",
+        "on-primary-fixed-variant": "#3a4376",
+        "tertiary-fixed-dim": "#ffb954",
+        "on-tertiary": "#452b00",
+        "on-surface-variant": "#c6c5d0",
+        "tertiary-container": "#ffb954",
+        "on-secondary": "#003731",
+        "outline-variant": "#46464f",
+        "inverse-primary": "#525b90",
+        "secondary-container": "#00d2bc",
+        "primary-fixed-dim": "#bac3ff",
+        "surface-bright": "#38393c",
+        "on-tertiary-fixed": "#291800",
+        "inverse-surface": "#e3e2e6",
+        "tertiary": "#ffddb4",
+        "surface-container-low": "#1b1b1f",
+        "error": "#ffb4ab",
+        "inverse-on-surface": "#2f3034",
+        "secondary-fixed-dim": "#25dec7",
+        "tertiary-fixed": "#ffddb4",
+        "on-primary-fixed": "#0c1649",
+        "on-primary-container": "#464f83",
+        "error-container": "#93000a",
+        "surface": "#121316",
+        "on-secondary-fixed-variant": "#005047",
+        "surface-container-high": "#292a2d",
+        "on-tertiary-container": "#734a00",
+        "on-background": "#e3e2e6",
+        "primary": "#dee0ff",
+        "primary-fixed": "#dee0ff",
+        "outline": "#90909a",
+        "surface-dim": "#121316",
+        "primary-container": "#bac3ff",
+        "surface-container-lowest": "#0d0e11",
+        "surface-variant": "#343538",
+        "on-error-container": "#ffdad6",
+        "background": "#121316",
+        "secondary-fixed": "#55fbe3",
+        "on-error": "#690005",
+        "on-tertiary-fixed-variant": "#633f00",
+        "on-primary": "#232c5e",
+        "surface-container": "#1f1f23",
+        "on-secondary-fixed": "#00201c",
+        "on-surface": "#e3e2e6"
+      },
+      "borderRadius": {
+        "DEFAULT": "1rem",
+        "lg": "2rem",
+        "xl": "3rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "gutter-desktop": "2rem",
+        "gutter": "1rem",
+        "space-xl": "2rem",
+        "margin-tablet": "2rem",
+        "margin-desktop": "3rem",
+        "space-sm": "0.5rem",
+        "space-md": "1rem",
+        "margin": "1rem",
+        "gutter-tablet": "1.5rem",
+        "space-xs": "0.25rem",
+        "space-lg": "1.5rem"
+      },
+      "fontFamily": {
+        "body-lg": ["Plus Jakarta Sans"],
+        "title-lg": ["Plus Jakarta Sans"],
+        "headline-lg-mobile": ["Plus Jakarta Sans"],
+        "label-lg": ["JetBrains Mono"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "display-lg": ["Plus Jakarta Sans"],
+        "body-sm": ["Plus Jakarta Sans"],
+        "title-sm": ["Plus Jakarta Sans"],
+        "label-md": ["JetBrains Mono"],
+        "body-md": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "display-md": ["Plus Jakarta Sans"],
+        "label-sm": ["JetBrains Mono"],
+        "title-md": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400" }],
+        "title-lg": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+        "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "600" }],
+        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+        "display-lg": ["57px", { "lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700" }],
+        "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.4px", "fontWeight": "400" }],
+        "title-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "600" }],
+        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400" }],
+        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+        "display-md": ["45px", { "lineHeight": "52px", "fontWeight": "700" }],
+        "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.5px", "fontWeight": "500" }],
+        "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "600" }],
+        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+      }
+    }
+  }
+};</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+      background-color: #121316;
+      color: #e3e2e6;
+    }
+  </style>
+</head><body class="bg-background text-on-surface min-h-screen flex flex-col font-body-md text-body-md"><header class="fixed top-0 inset-x-0 z-50 bg-[#121316]/90 backdrop-blur-xl pt-safe border-b border-outline-variant/20"><div class="h-16 px-gutter flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img src="https://lh3.googleusercontent.com/aida/AEtjO1Xqa45Ca5uywiuPjIzE9_BGCj07J6ffjvvSdfcA2VsBhsIeGO2snEK8hkMLL-2qGI-a03cV99LFdp22fYwplPUeqlFRSNQuoF2XxoOtIrRD3IEZrckD0DWFxeWO08_QlfVD0KAH-ZkU6k6nksxqDodQZjGICAJytRdZ7FpY-esYGj2bECowi1PDJxoNrfs3otn66n5DSXhog11CtpUB_PWyo7PklSRB-bC7DKiizlDYC0Hgc2zh84TjztLz" alt="ClassTrack Logo" class="w-8 h-8 rounded-xl object-cover shrink-0"><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-title-md text-title-md text-on-surface truncate">ClassTrack</span><span class="font-title-sm text-title-sm text-on-surface-variant font-normal">·</span><span class="font-title-sm text-title-sm text-primary-container font-medium truncate">Timetable</span></div></div></div><div class="flex items-center gap-space-xs shrink-0"><button class="w-11 h-11 relative rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface"></span></button><button class="w-11 h-11 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFxuhLh1jiQS9yp8dQNq79HNDuH2DaoVqd5WvAyuEXKOgbhFdKIaPZMbsZPEN8yTh-dWxNoOOnXdW7aDoVZFkE6vrsS-mey0dRBSg3otHGvPgI4MzIUUKejXnOD9clzn609qchidc1MNuMZONOa0OI0n4nu14As2Wf6lzZEKlmGa4MGBfjdFprxf3nZvLwZn5vNjEdZ3BWJosp9Ecscc3wuSzlEvP_6xTUvd6Q2u7nOthaW0rTVkpSzg"></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-background"><div class="flex flex-col w-full px-margin pb-space-xl">
+<!-- Top Context & Quick Actions -->
+<div class="flex flex-col gap-space-sm pt-space-md pb-space-xs">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Weekly Timetable</h1>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm shrink-0 border border-outline-variant/30">
+          Sem 5
+        </span>
+</div>
+<button class="h-10 px-4 rounded-full bg-surface-container-high text-primary-container hover:bg-surface-container-highest transition-colors flex items-center gap-1.5 font-label-lg text-label-lg border border-outline-variant/30 shrink-0 active:scale-95" id="edit-import-btn">
+<span class="material-symbols-outlined text-[18px]">edit_calendar</span>
+<span class="">Edit / Import</span>
+</button>
+</div>
+<!-- Term / View Mode Selector Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto py-1 no-scrollbar">
+<button class="h-8 px-3.5 rounded-full bg-primary-container/20 border border-primary-container/40 text-primary-fixed-dim font-label-md text-label-md flex items-center gap-1.5 shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-fixed-dim">school</span>
+<span class="">Semester 5 (Current)</span>
+</button>
+<button class="h-8 px-3.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shrink-0 hover:bg-surface-container-high transition-colors border border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="">Filter Course</span>
+</button>
+<button class="h-8 px-3.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 shrink-0 hover:bg-surface-container-high transition-colors border border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+<span class="">Reminders (Active)</span>
+</button>
+</div>
+</div>
+<!-- Day Selector Carousel / Horizontal Strip -->
+<div class="py-space-xs">
+<div class="flex items-center justify-between gap-1.5 bg-surface-container-low p-1.5 rounded-2xl border border-outline-variant/20" id="day-selector-group">
+<button class="day-chip flex-1 py-2 px-1 rounded-xl flex flex-col items-center gap-0.5 text-on-surface-variant hover:bg-surface-container transition-all" data-day="Mon">
+<span class="font-label-sm text-label-sm">M</span>
+<span class="font-title-sm text-title-sm">18</span>
+</button>
+<button class="day-chip flex-1 py-2 px-1 rounded-xl flex flex-col items-center gap-0.5 text-on-surface-variant hover:bg-surface-container transition-all" data-day="Tue">
+<span class="font-label-sm text-label-sm">T</span>
+<span class="font-title-sm text-title-sm">19</span>
+</button>
+<button class="day-chip active flex-1 py-2 px-1 rounded-xl flex flex-col items-center gap-0.5 bg-primary-container text-on-primary font-bold shadow-md transition-all scale-[1.02]" data-day="Wed">
+<span class="font-label-sm text-label-sm font-semibold">W</span>
+<span class="font-title-sm text-title-sm font-bold">20</span>
+</button>
+<button class="day-chip flex-1 py-2 px-1 rounded-xl flex flex-col items-center gap-0.5 text-on-surface-variant hover:bg-surface-container transition-all" data-day="Thu">
+<span class="font-label-sm text-label-sm">T</span>
+<span class="font-title-sm text-title-sm">21</span>
+</button>
+<button class="day-chip flex-1 py-2 px-1 rounded-xl flex flex-col items-center gap-0.5 text-on-surface-variant hover:bg-surface-container transition-all" data-day="Fri">
+<span class="font-label-sm text-label-sm">F</span>
+<span class="font-title-sm text-title-sm">22</span>
+</button>
+<button class="day-chip flex-1 py-2 px-1 rounded-xl flex flex-col items-center gap-0.5 text-on-surface-variant hover:bg-surface-container transition-all" data-day="Sat">
+<span class="font-label-sm text-label-sm">S</span>
+<span class="font-title-sm text-title-sm">23</span>
+</button>
+</div>
+</div>
+<!-- Daily Schedule Diagnostic Stats Ribbon -->
+<div class="mt-space-sm mb-space-sm p-3 rounded-2xl bg-surface-container flex items-center justify-between gap-space-sm border border-outline-variant/20">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-primary-container/20 text-primary-fixed-dim flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Wednesday Overview</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">4 Lectures (5.5 hrs total) · 1 Lab</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0 bg-surface-container-high px-2.5 py-1 rounded-full text-emerald-400 border border-emerald-400/20">
+<span class="material-symbols-outlined text-[15px] text-emerald-400">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">91% Target</span>
+</div>
+</div>
+<!-- Visual Timetable Schedule Feed -->
+<div class="flex flex-col gap-space-sm mt-space-xs relative">
+<!-- Timeline vertical track indicator background -->
+<div class="absolute left-4 top-4 bottom-4 w-0.5 bg-surface-container-high/80 -z-0"></div>
+<!-- Slot 1: 09:00 - 10:30 AM (Data Structures) -->
+<div class="relative z-10 flex gap-space-sm">
+<div class="w-12 shrink-0 flex flex-col items-center pt-2">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">09:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">90m</span>
+</div>
+<div class="flex-1 rounded-2xl bg-surface-container-low p-space-md shadow-sm border border-outline-variant/20 flex flex-col gap-2 relative overflow-hidden">
+<!-- Colored Left Accent Bar -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary-fixed-dim"></div>
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate">Data Structures</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">meeting_room</span> Room 402 · Prof. Vance
+</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium shrink-0 border border-outline-variant/20">
+Lecture
+</span>
+</div>
+<!-- Attendance Performance Ribbon -->
+<div class="mt-1 p-2 rounded-xl bg-surface-container flex items-center justify-between gap-space-xs border border-outline-variant/15">
+<div class="flex items-center gap-1.5 min-w-0">
+<div class="w-5 h-5 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-fixed-dim shrink-0">
+<span class="material-symbols-outlined text-[13px]">insights</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Wed History: 7/8 Attended</span>
+</div>
+<span class="font-label-md text-label-md text-emerald-400 font-semibold shrink-0">87.5%</span>
+</div>
+<!-- Micro-interaction: Switch & Quick Log -->
+<div class="flex items-center justify-between pt-1 pl-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="sr-only peer reminder-toggle" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container relative"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Notify 15m prior</span>
+</label>
+<button class="h-8 px-3 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-bright transition-colors active:scale-95 border border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">check</span>
+<span class="">Mark Present</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Slot 2: 10:30 - 11:00 AM (Break Card) -->
+<div class="relative z-10 flex gap-space-sm">
+<div class="w-12 shrink-0 flex flex-col items-center pt-2">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">10:30</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">30m</span>
+</div>
+<div class="flex-1 rounded-2xl bg-surface-container/40 p-3 flex items-center justify-between gap-space-sm border border-outline-variant/15">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">free_breakfast</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Morning Break / Free Slot</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Library reading space available</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant shrink-0">Free</span>
+</div>
+</div>
+<!-- Slot 3: 11:00 AM - 12:30 PM (DBMS Practical - Shortage Risk Alert) -->
+<div class="relative z-10 flex gap-space-sm">
+<div class="w-12 shrink-0 flex flex-col items-center pt-2">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">11:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">90m</span>
+</div>
+<div class="flex-1 rounded-2xl bg-surface-container-low p-space-md shadow-sm border border-outline-variant/20 flex flex-col gap-2 relative overflow-hidden">
+<!-- Colored Left Accent Bar (Error red for shortage risk) -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate">Database Management Systems</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">biotech</span> Lab 3B · Prof. Alvarez
+</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-medium shrink-0 border border-secondary/20">
+Practical / Lab
+</span>
+</div>
+<!-- Shortage Warning Box -->
+<div class="p-2.5 rounded-xl bg-error-container/40 border border-error/30 text-error flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error shrink-0">warning</span>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-md text-label-md font-semibold text-error truncate">Shortage Risk Alert (68%)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Requires 3 consecutive presences to reach 75%</span>
+</div>
+</div>
+<!-- Toggle & Quick Log -->
+<div class="flex items-center justify-between pt-1 pl-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="sr-only peer reminder-toggle" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container relative"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Notify 15m prior</span>
+</label>
+<button class="h-8 px-3 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 active:scale-95 shadow-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+<span class="">Attend</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Slot 4: 12:30 PM - 01:30 PM (Lunch Recess) -->
+<div class="relative z-10 flex gap-space-sm">
+<div class="w-12 shrink-0 flex flex-col items-center pt-2">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">12:30</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">60m</span>
+</div>
+<div class="flex-1 rounded-2xl bg-surface-container/40 p-3 flex items-center justify-between gap-space-sm border border-outline-variant/15">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-sm text-title-sm text-on-surface truncate">Lunch Recess</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Central Food Court &amp; Lawn</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant shrink-0">Recess</span>
+</div>
+</div>
+<!-- Slot 5: 02:00 PM - 03:30 PM (Operating Systems) -->
+<div class="relative z-10 flex gap-space-sm">
+<div class="w-12 shrink-0 flex flex-col items-center pt-2">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">02:00</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">90m</span>
+</div>
+<div class="flex-1 rounded-2xl bg-surface-container-low p-space-md shadow-sm border border-outline-variant/20 flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-tertiary-fixed-dim"></div>
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate">Operating Systems</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">apartment</span> Hall B · Dr. Mitchell
+</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium shrink-0 border border-outline-variant/20">
+Lecture
+</span>
+</div>
+<div class="flex items-center justify-between pt-1 pl-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input class="sr-only peer reminder-toggle" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container relative"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Notify 15m prior</span>
+</label>
+<button class="h-8 px-3 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-bright transition-colors active:scale-95 border border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">check</span>
+<span class="">Mark Present</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Slot 6: 03:30 PM - 04:30 PM (Computer Networks) -->
+<div class="relative z-10 flex gap-space-sm">
+<div class="w-12 shrink-0 flex flex-col items-center pt-2">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">03:30</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">60m</span>
+</div>
+<div class="flex-1 rounded-2xl bg-surface-container-low p-space-md shadow-sm border border-outline-variant/20 flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex items-start justify-between gap-space-xs pl-1">
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface font-semibold truncate">Computer Networks</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-on-surface-variant">meeting_room</span> Room 301 · Prof. Raman
+</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium shrink-0 border border-outline-variant/20">
+Tutorial
+</span>
+</div>
+<div class="flex items-center justify-between pt-1 pl-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="sr-only peer reminder-toggle" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary-container relative"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Notify 15m prior</span>
+</label>
+<button class="h-8 px-3 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-bright transition-colors active:scale-95 border border-outline-variant/20">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">check</span>
+<span class="">Mark Present</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Timetable Storage & Device Offline Status Card -->
+
+<!-- Android Jetpack M3 Floating Action Button -->
+<div class="fixed right-margin bottom-24 z-40">
+<button class="h-14 px-5 rounded-2xl bg-primary-container text-on-primary flex items-center gap-2 shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all" id="add-slot-fab">
+<span class="material-symbols-outlined text-[24px]">add</span>
+<span class="font-label-lg text-label-lg font-semibold tracking-wide">Add Class Slot</span>
+</button>
+</div>
+<!-- Micro-Modal Sheet for Quick Class Entry (Hidden by default) -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex flex-col justify-end hidden opacity-0 transition-opacity duration-200" id="quick-add-sheet">
+<div class="w-full bg-surface-container-high rounded-t-[28px] p-space-lg flex flex-col gap-space-sm transform translate-y-full transition-transform duration-300 shadow-2xl border-t border-outline-variant/30">
+<div class="w-10 h-1.5 bg-outline-variant rounded-full mx-auto mb-1"></div>
+<div class="flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">New Class Slot</h2>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant" id="close-sheet-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-xs mt-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Course Title</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-lowest text-on-surface border border-outline-variant/30 font-body-md text-body-md focus:outline-none focus:border-primary-container" placeholder="e.g. Algorithms Lab" type="text">
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Start Time</label>
+<input class="h-12 px-4 rounded-xl bg-surface-container-lowest text-on-surface border border-outline-variant/30 font-body-md text-body-md" type="text" value="09:00 AM">
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Room / Hall</label>
+<input class="h-12 px-4 rounded-xl bg-surface-container-lowest text-on-surface border border-outline-variant/30 font-body-md text-body-md" placeholder="Room 204" type="text">
+</div>
+</div>
+<button class="w-full h-12 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg font-semibold mt-2 shadow-sm active:scale-98" id="save-slot-btn">
+        Save to Local Timetable
+      </button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Day Selection Micro-interaction
+    const dayChips = document.querySelectorAll('.day-chip');
+    dayChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        dayChips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-md', 'scale-[1.02]');
+          c.classList.add('text-on-surface-variant');
+        });
+        chip.classList.remove('text-on-surface-variant');
+        chip.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-md', 'scale-[1.02]');
+      });
+    });
+
+    // Quick Add Modal Trigger
+    const fab = document.getElementById('add-slot-fab');
+    const sheet = document.getElementById('quick-add-sheet');
+    const closeBtn = document.getElementById('close-sheet-btn');
+    const saveBtn = document.getElementById('save-slot-btn');
+    const sheetContent = sheet.querySelector('div:last-child');
+
+    function openModal() {
+      sheet.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        sheet.classList.remove('opacity-0');
+        sheetContent.classList.remove('translate-y-full');
+      });
+    }
+
+    function closeModal() {
+      sheet.classList.add('opacity-0');
+      sheetContent.classList.add('translate-y-full');
+      setTimeout(() => {
+        sheet.classList.add('hidden');
+      }, 250);
+    }
+
+    if (fab) fab.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (saveBtn) saveBtn.addEventListener('click', closeModal);
+    sheet.addEventListener('click', (e) => {
+      if (e.target === sheet) closeModal();
+    });
+
+    // Attendance Toggle Toast micro-interaction
+    const attendButtons = document.querySelectorAll('button:has(.material-symbols-outlined)');
+    attendButtons.forEach(btn => {
+      if (btn.innerText.includes('Mark Present') || btn.innerText.includes('Attend')) {
+        btn.addEventListener('click', function() {
+          this.innerHTML = '<span class="material-symbols-outlined text-[16px] text-emerald-400">task_alt</span><span>Logged</span>';
+          this.classList.add('bg-primary-container/30', 'text-primary-fixed-dim', 'border-primary-container/40');
+          this.classList.remove('bg-surface-container-highest', 'bg-primary-container', 'text-on-primary');
+        });
+      }
+    });
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 bg-[#1b1b1f]/95 backdrop-blur-xl border-t border-outline-variant/20" data-active-classes="[&amp;_.nav-pill]:bg-primary-container [&amp;_.nav-pill]:w-16 [&amp;_.nav-icon]:text-on-primary [&amp;_.nav-label]:text-on-surface [&amp;_.nav-label]:font-semibold"><div class="h-20 px-gutter-sm flex items-center justify-around"><a class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group" data-path="today" href="#"><div class="nav-pill w-12 h-8 rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-surface-container-high"><span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant transition-colors">event_available</span></div><span class="nav-label font-label-md text-label-md text-on-surface-variant transition-colors">Today</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group [&amp;_.nav-pill]:bg-primary-container [&amp;_.nav-pill]:w-16 [&amp;_.nav-icon]:text-on-primary [&amp;_.nav-label]:text-on-surface [&amp;_.nav-label]:font-semibold" data-path="timetable" href="#"><div class="nav-pill w-12 h-8 rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-surface-container-high"><span class="material-symbols-outlined nav-icon text-[22px] text-on-primary transition-colors">calendar_view_week</span></div><span class="nav-label font-label-md text-label-md text-on-surface transition-colors font-semibold">Timetable</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group" data-path="analytics" href="#"><div class="nav-pill w-12 h-8 rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-surface-container-high"><span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant transition-colors">pie_chart</span></div><span class="nav-label font-label-md text-label-md text-on-surface-variant transition-colors">Analytics</span></a><a class="flex-1 flex flex-col items-center justify-center min-w-[56px] h-full gap-1 group" data-path="materials" href="#"><div class="nav-pill w-12 h-8 rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-surface-container-high"><span class="material-symbols-outlined nav-icon text-[22px] text-on-surface-variant transition-colors">auto_stories</span></div><span class="nav-label font-label-md text-label-md text-on-surface-variant transition-colors">Materials</span></a></div></nav>
+
+</body></html>

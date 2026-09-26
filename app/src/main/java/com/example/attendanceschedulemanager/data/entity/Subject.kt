@@ -7,7 +7,10 @@ import androidx.room.PrimaryKey
 data class Subject(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name: String,
-    val code: String? = null,
-    val color: Int = 0xFF6200EE.toInt(),
-    val attendanceThreshold: Int = 75
+    val code: String,
+    val professor: String? = null,
+    val credits: Int = 0,
+    val colorTag: Int,
+    val customTargetPercentage: Float? = null,
+    val type: String = "Lecture"
 )
